@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS menus (
+  id SERIAL PRIMARY KEY,
+  raw_text TEXT NOT NULL,
+  extracted JSONB NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
+);
