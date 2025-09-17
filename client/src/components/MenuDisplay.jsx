@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function MenuDisplay({ data }) {
-  // Defensive defaults
   const title = data?.title || 'Home Chef Menu'
   const day = data?.day_of_week || 'Unknown'
   const items = Array.isArray(data?.menu_items) ? data.menu_items : []
