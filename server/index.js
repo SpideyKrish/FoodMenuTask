@@ -1,4 +1,3 @@
-// Entry point for the Express server
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -10,10 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
 app.use('/api', uploadRouter);
-
-// Health check
 app.get('/', (req, res) => res.send('Home Chef Menu Extractor API'));
 
 const port = process.env.PORT || 4000;
