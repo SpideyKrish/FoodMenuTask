@@ -64,12 +64,11 @@ ${fileText}
 
     let assistantMessage = resp.data.choices[0].message.content.trim();
 
-    // Attempt to extract JSON from the response
     let parsed;
     try {
       parsed = JSON.parse(assistantMessage);
     } catch (err) {
-      // Fallback: grab first {...} block
+
       const match = assistantMessage.match(/\{[\s\S]*\}/);
       if (!match) {
         console.error('Full AI response:', assistantMessage);
@@ -78,7 +77,7 @@ ${fileText}
       parsed = JSON.parse(match[0]);
     }
 
-    // Ensure schema compliance
+ 
     return {
       title: parsed.title || null,
       day_of_week: parsed.day_of_week || null,
